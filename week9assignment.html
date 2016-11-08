@@ -1,0 +1,54 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/p5.js/0.4.6/p5.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.4.6/addons/p5.dom.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.4.16/addons/p5.sound.js"></script>
+    <script>
+        var img;
+        var inputBox;
+        var bx = [120, 150, 180, 210];
+
+
+
+        function preload() {
+            img = loadImage("whatsapp.jpg");
+
+        }
+
+        function setup() {
+            createCanvas(300, 500);
+            background(200);
+            image(img, 0, 0, 300, 500);
+            inputBox = createInput();
+            inputBox.position(50, 313);
+
+        }
+
+
+        function mousePressed() {
+            if (mouseX >= 220 && mouseX <= 270 && mouseY >= 300 && mouseY <= 350) {
+                for (var i = 0; i < bx.length; i++) {
+                    noStroke()；
+                    fill(0, 255, 0);
+                    rect(100, bx[i], 180, 20, 2);
+                    fill(0)；
+                    text(inputBox.value(), 110, bx[i] + 15)；
+
+                }
+            }
+
+        }
+
+        function draw() {
+
+            fill(0, 10, 255)；
+            rect(220, 300, 50, 30, 10)；
+            fill(255);
+            text("SEND", 230, 320)；
+        }
+    </script>
+</head>
+
+</html>
